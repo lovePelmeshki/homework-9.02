@@ -18,20 +18,30 @@
 ![screen](img/screen-1.png)
 2. Приложите в файл README.md текст использованных команд в GitHub
 
-```# apt install postgresql```
-```# wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_6.0-4+debian11_all.deb```
-```# dpkg -i zabbix-release_6.0-4+debian11_all.deb```
-```# apt update ```
-```# apt install zabbix-server-pgsql zabbix-frontend-php php7.4-pgsql zabbix-apache-conf zabbix-sql-scripts zabbix-agent```
+```bash 
+# apt install postgresql
 
-```# sudo -u postgres createuser --pwprompt zabbix```
-```# sudo -u postgres createdb -O zabbix zabbix```
+# wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_6.0-4+debian11_all.deb
 
-```zcat /usr/share/zabbix-sql-scripts/postgresql/server.sql.gz | sudo -u zabbix psql zabbix```
-``` nano /etc/zabbix/zabbix_server.conf DBPassword=1234567890```
+# dpkg -i zabbix-release_6.0-4+debian11_all.deb
 
-```# systemctl restart zabbix-server zabbix-agent apache2```
-```# systemctl enable zabbix-server zabbix-agent apache2```
+# apt update 
+
+# apt install zabbix-server-pgsql zabbix-frontend-php php7.4-pgsql zabbix-apache-conf zabbix-sql-scripts zabbix-agent
+
+# sudo -u postgres createuser --pwprompt zabbix
+
+# sudo -u postgres createdb -O zabbix zabbix
+
+zcat /usr/share/zabbix-sql-scripts/postgresql/server.sql.gz | sudo -u zabbix psql zabbix
+
+# nano /etc/zabbix/zabbix_server.conf DBPassword=1234567890
+
+# systemctl restart zabbix-server zabbix-agent apache2
+
+# systemctl enable zabbix-server zabbix-agent apache2
+```
+
 
 ### Задание 2
 Установите Zabbix Agent на два хоста.
