@@ -40,8 +40,19 @@
 `Требования к результаты`
 1. Приложите в файл README.md скриншот раздела Configuration > Hosts, где видно, что агенты подключены к серверу
 2. Приложите в файл README.md скриншот лога zabbix agent, где видно, что он работает с сервером
+
 3. Приложите в файл README.md скриншот раздела Monitoring > Latest data для обоих хостов, где видны поступающие от агентов данные.
+
 4. Приложите в файл README.md текст использованных команд в GitHub
+```
+systemctl status zabbix-agent (running)
+nano /etc/zabbix/zabbix_agent.conf 
+systemctl restart zabbix-agent
+systemctl status zabbix-agent (running)
+tail -f /var/log/zabbix/zabbix_agentd.log
+```
+
+
 
 
 
